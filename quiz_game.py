@@ -1,6 +1,5 @@
 import random
 
-# Define quiz questions and answers
 quiz_questions = {
     "What is the capital of France?": "Paris",
     "Who wrote 'Romeo and Juliet'?": "William Shakespeare",
