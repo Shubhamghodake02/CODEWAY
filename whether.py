@@ -1,21 +1,15 @@
 import requests
 
 def get_weather_data(location):
-    # Enter your OpenWeatherMap API key here
     api_key = "YOUR_API_KEY"
 
-    # Construct the API URL based on the user's input
     url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}&units=metric"
 
-    # Send an HTTP request to the API
     response = requests.get(url)
 
-    # Check if the request was successful
     if response.status_code == 200:
-        # Parse JSON response
         data = response.json()
 
-        # Extract relevant weather information
         temperature = data['main']['temp']
         humidity = data['main']['humidity']
         wind_speed = data['wind']['speed']
@@ -28,7 +22,6 @@ def get_weather_data(location):
             'description': description
         }
     else:
-        # Return None if request failed
         return None
 
 def display_weather(weather_data, location):
